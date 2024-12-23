@@ -1,5 +1,7 @@
 package exercicioLista;
 
+import java.util.List;
+
 public class Funcionarios {
 	private Integer id;
 	private String nome;
@@ -39,8 +41,13 @@ public class Funcionarios {
 		this.salario = salario;
 	}
 	
-	public double porcentagemAumentoSal(double valor) {
-		return salario * valor / 100;
+	public void porcentagemAumentoSal(double porcentagem) {
+		 salario = salario + salario* porcentagem / 100;
+	}
+
+	@Override
+	public String toString() {
+		return id + ", " + nome + ", " + String.format("%.2f", salario);
 	}
 	
 	
