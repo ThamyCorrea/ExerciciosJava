@@ -1,7 +1,5 @@
 package exercicioLista;
 
-import java.util.List;
-
 public class Funcionarios {
 	private Integer id;
 	private String nome;
