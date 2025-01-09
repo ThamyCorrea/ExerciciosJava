@@ -7,7 +7,7 @@ import java.util.List;
 public class Colaborador {
 	
 	private String nome;
-	private NivelFuncionario nivel;
+	private NivelColaborador nivel;
 	private Double salarioBase;
 	
 	private Departamento departamento;
@@ -18,7 +18,7 @@ public class Colaborador {
 		
 	}
 
-	public Colaborador(String nome, NivelFuncionario nivel, Double salarioBase, Departamento departamento) {
+	public Colaborador(String nome, NivelColaborador nivel, Double salarioBase, Departamento departamento) {
 		super();
 		this.nome = nome;
 		this.nivel = nivel;
@@ -34,11 +34,11 @@ public class Colaborador {
 		this.nome = nome;
 	}
 
-	public NivelFuncionario getNivel() {
+	public NivelColaborador getNivel() {
 		return nivel;
 	}
 
-	public void setNivel(NivelFuncionario nivel) {
+	public void setNivel(NivelColaborador nivel) {
 		this.nivel = nivel;
 	}
 

@@ -28,10 +28,10 @@ public class Programa {
 		System.out.print("Nome: ");
 		String nomeColaborador = sc.nextLine();
 		System.out.print("Nível: ");
-		String nivelColaborador = sc.nextLine();
+		String nivel = sc.nextLine();
 		System.out.print("Salário base: ");
 		Double salarioColaborador = sc.nextDouble();
-		Colaborador colaborador = new Colaborador(nomeColaborador, NivelFuncionario.valueOf(nivelColaborador), salarioColaborador, new Departamento(nomeDepartamento));
+		Colaborador colaborador = new Colaborador(nomeColaborador, NivelColaborador.valueOf(nivel), salarioColaborador, new Departamento(nomeDepartamento));
 		
 		System.out.print("Quantos contratos para este trabalhador? ");
 		Integer n = sc.nextInt();

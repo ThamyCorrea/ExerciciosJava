@@ -1,9 +1,8 @@
 package composicaoEenumeracao;
 
-public enum NivelFuncionario {
-	
-	JUNIOR,
-	Pleno,
-	SENIOR;
+public enum NivelColaborador {
 
+	JUNIOR,
+	PlENO,
+	SENIOR;
 }
