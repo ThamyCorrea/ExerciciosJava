@@ -1,10 +1,13 @@
 package desafioComposicaoEnumeracao;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
 public class Pedido {
+	
 	
 	private Date data;
 	private StatusPedido status;
@@ -76,6 +79,34 @@ public class Pedido {
 			total += item.getPreco();
 		}return total;
 	}
+
+	@Override
+	public String toString() {
+		
+		
+		SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
+		String data = dataFormat.format(this.data);
+		
+		StringBuilder sb = new StringBuilder();
+		sb.append(data);
+		sb.append(status);
+		sb.append(cliente.getNome());
+		sb.append(cliente.getDataNasc());
+		sb.append(cliente.getEmail());
+		sb.append(produto.getNome());
+		sb.append(produto.getPreco());
+		for(ItemPedido item : itens) {
+			sb.append(item.getQuantidade());
+			sb.append(item.subTotal());
+		}
+		sb.append(total());
+		
+	
+		
+		return sb.toString();
+	}
+	
+	
 	
 
 }
