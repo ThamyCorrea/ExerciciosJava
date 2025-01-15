@@ -2,8 +2,8 @@ package desafioComposicaoEnumeracao;
 
 public class Produto {
 
-	private String nome;
-	private Double preco;
+	private String nomeProduto = "TV";
+	private Double precoProduto = 1.50;
 	
 		
 	public  Produto() {
@@ -11,29 +11,29 @@ public class Produto {
 	}
 
 
-	public Produto(String nome, Double preco) {
-		this.nome = nome;
-		this.preco = preco;
+	public Produto(String nomeProduto, Double precoProduto) {
+		this.nomeProduto = nomeProduto;
+		this.precoProduto = precoProduto;
 	}
 
 
-	public String getNome() {
-		return nome;
+	public String getNomeProduto() {
+		return nomeProduto;
 	}
 
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeProduto(String nomeProduto) {
+		this.nomeProduto = nomeProduto;
 	}
 
 
-	public Double getPreco() {
-		return preco;
+	public Double getPrecoProduto() {
+		return precoProduto;
 	}
 
 
-	public void setPreco(Double preco) {
-		this.preco = preco;
+	public void setPrecoProduto(Double precoProduto) {
+		this.precoProduto = precoProduto;
 	}
 	
 	

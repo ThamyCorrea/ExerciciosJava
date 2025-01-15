@@ -1,8 +1,11 @@
 package desafioComposicaoEnumeracao;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Cliente {
+	
+	private SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 	
 	private String nome;
 	private String email;
@@ -48,11 +51,9 @@ public class Cliente {
 
 	@Override
 	public String toString() {
-		return "Nome: " + nome + "\n" + 
-				"Email: " + email + "\n" + 
-				"Data de Nascimento: " + dataNasc;
+		return nome + " (" + sdf.format(dataNasc) + ")" + 
+				" - " + email + "\n";
 	}
-	
 	
 
 }

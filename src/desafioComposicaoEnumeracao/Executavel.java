@@ -14,51 +14,43 @@ public class Executavel {
 			Scanner sc = new Scanner(System.in);
 			SimpleDateFormat dataFormat = new SimpleDateFormat("dd/MM/yyyy");
 			
-			Pedido pedido = new Pedido(null, null, null, null);
+			System.out.println("Entre com os dados dos clientes: ");
+			System.out.print("Nome: ");
+			String nome = sc.nextLine();				
+			System.out.print("Email: ");
+			String email = sc.next();
+			System.out.print("Data aniversário: (DD/MM/AAAA): ");
+			Date dataNasc = dataFormat.parse(sc.next());
 				
-			int n = sc.nextInt();
-			
-			for(int i = 0; i < n; i++) {
-				System.out.println("Entre com os dados dos clientes: ");
-				System.out.print("Nome: ");
-				String nome = sc.nextLine();
-				sc.next();
-				System.out.print("Email: ");
-				String email = sc.next();
-				System.out.print("Data aniversário: ");
-				Date data = dataFormat.parse(sc.next());
-				
-				Cliente cliente = new Cliente(nome, email, data);	
-				
-							
-			}
-			
+			Cliente cliente = new Cliente(nome, email, dataNasc);	
+					
 			System.out.println("Entre com os dados do Produto");
 			System.out.print("Status: ");
-			String nivel = sc.next();
+			StatusPedido status = StatusPedido.valueOf(sc.next()) ;	
 			
-			System.out.println("Quantos item irá comprar? ");
-			int qntItem = sc.nextInt();
-			
-			for(int i = 0; i < qntItem; i++) {
+			Pedido pedido = new Pedido(new Date(), status, cliente);
+					
+			System.out.print("Quantos item o pedido terá? ");
+			int n = sc.nextInt();			
+			for(int i = 0; i < n; i++) {
 				System.out.println("Ente com o dado do item #" + (i + 1));
-				System.out.println("Nome do produto: ");
-				String nomeProduto = sc.next();
+				System.out.print("Nome do produto: ");
+				sc.nextLine();
+				String nomeProduto = sc.nextLine();
 				System.out.println("Valor do produto: ");
-				double preco = sc.nextDouble();
+				double precoProduto = sc.nextDouble();
 				System.out.println("Quantidade: ");
 				int quantidade = sc.nextInt();
 				
-				ItemPedido item = new ItemPedido(quantidade, preco);			
-				Produto produto = new Produto(nomeProduto, preco);
+				Produto produto = new Produto(nomeProduto, precoProduto);
+				
+				ItemPedido item = new ItemPedido(quantidade, precoProduto, produto);
+				
+				pedido.addItem(item);				
 			}
 			
-			
-			
+			System.out.println();
 			System.out.println(pedido);
-			
-			
-			
 			
 			sc.close();
 
